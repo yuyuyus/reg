@@ -6,17 +6,13 @@ plotly
 ply
 ptyprocess
 seaborn
-
 scikit-learn
 selenium
 streamlit==1.8.1
-
-
 webdriver
 Keys
 urlopen
 quote_plus
-
 os
 sys
 urllib
