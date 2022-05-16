@@ -9,8 +9,6 @@ seaborn
 scikit-learn
 selenium
 streamlit==1.8.1
-webdriver
 os
 sys
 urllib
-request
