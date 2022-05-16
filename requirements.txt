@@ -24,4 +24,5 @@ quote_plus
 
 os
 sys
+urllib
 urllib.request
