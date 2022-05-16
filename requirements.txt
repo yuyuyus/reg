@@ -7,6 +7,5 @@ ply
 ptyprocess
 seaborn
 scikit-learn
-selenium
 streamlit
 
