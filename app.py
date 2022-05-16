@@ -10,4 +10,4 @@ st.write("""
 - three
 """)
 
-input('안녕?')
+input = st.text_input("검색어를 쓰세요")
