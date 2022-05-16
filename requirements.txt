@@ -9,6 +9,4 @@ seaborn
 scikit-learn
 selenium
 streamlit
-os
-sys
-urllib
+
