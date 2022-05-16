@@ -21,3 +21,7 @@ webdriver
 Keys
 urlopen
 quote_plus
+
+os
+sys
+urllib.request
