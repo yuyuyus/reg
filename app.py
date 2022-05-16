@@ -9,3 +9,5 @@ st.write("""
 - two
 - three
 """)
+
+input('안녕?')
