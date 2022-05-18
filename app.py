@@ -10,5 +10,6 @@ st.write("""
 list=[]
 while true:
   input = st.text_input("검색어를 쓰세요")
-  list.append(input)
-  st.write(list)
+  if len(list)<31
+    list.append(input)
+    st.write(list)
