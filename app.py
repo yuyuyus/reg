@@ -8,7 +8,7 @@ st.write("""
 
 """)
 list=[]
-while len(list)<11:
+while true:
   input = st.text_input("검색어를 쓰세요")
   list.append(input)
   st.write(list)
