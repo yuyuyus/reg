@@ -13,16 +13,6 @@ def auth():
     return auth_result
 
 
-def create_layout():
-    auth_result = auth()
-
-    if auth_result:
-        st.sidebar.success('Correct Auth Info :)')
-        st.title('Hello World')
-        st.header('Header')
-        st.subheader('Sub Header')
-    else:
-        st.sidebar.warning('Wrong Authentication !!!')
 
 
 def main():
