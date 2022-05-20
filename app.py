@@ -14,20 +14,20 @@ data_all = []
 
 if menu == "단어장 작성하기":
     write_date = st.date_input("작성 날짜", datetime.datetime.now())
-    write_word = st.text_input("단어 입력하는 곳", "필수 입력")
-    write_mean = st.radio("위 단어의 뜻을 입력하시겠습니까?", ("예", "아니오"))
+    write_word = st.text_input("단어 입력하는 곳", placeholder="필수 입력")
+    write_mean = st.radio("위 단어의 뜻을 입력하시겠습니까?", ("아니오", "예"))
     if write_mean == '예':
        write_mean = st.text_input("뜻 입력하는 곳")
     else: 
         write_mean = '뜻 미입력'
 
-    write_example = st.radio("위 단어의 예문을 입력하시겠습니까?", ("예", "아니오"))
+    write_example = st.radio("위 단어의 예문을 입력하시겠습니까?", ("아니오", "예"))
     if write_example == '예':
        write_example = st.text_input("예문 입력하는 곳")
     else: 
        write_example = '예문 미입력'
           
-    write_memo = st.radio("추가적으로 메모할 내용이 있습니까?", ("예", "아니오"))
+    write_memo = st.radio("추가적으로 메모할 내용이 있습니까?", ("아니오", "예"))
     if write_memo == '예':
        write_memo = st.text_input("뜻 입력하는 곳")
     else: 
