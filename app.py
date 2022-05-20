@@ -29,9 +29,9 @@ if menu == "단어장 작성하기":
           
     write_memo = st.radio("추가적으로 메모할 내용이 있습니까?", ("아니오", "예"))
     if write_memo == '예':
-       write_memo = st.text_input("뜻 입력하는 곳")
+       write_memo = st.text_input("메모 입력하는 곳")
     else: 
-       write_mean = '메모 미입력'
+       write_memo = '메모 미입력'
 
 
     if st.button('작성 완료하기'):
