@@ -33,7 +33,7 @@ if menu == "단어장 작성하기":
     else: 
        write_memo = '메모 미입력'
 
-
+        
     if st.button('작성 완료하기'):
       wordlist=list([[write_date, write_word, write_mean, write_example, write_memo]])
       
@@ -43,7 +43,21 @@ if menu == "단어장 작성하기":
       
       st.success('작성한 내용이 저장되었습니다.')
           
-          
+        
+    if st.button('작성 완료하기2'):
+      wordlist2=list([[write_date, write_word, write_mean, write_example, write_memo]])
+      
+      wordlist_df2=pd.DataFrame(wordlist2, columns=column_name)
+      
+      st.table(wordlist_df2)  #st.dataframe(wordlist_df)
+      
+      st.success('작성한 내용이 저장되었습니다.')
+      
+      df=wordlist_df.append(wordlist_df2) #,ignore_index=True
+      
+      st.table(df)
+
+                    
           
           
 option = st.sidebar.selectbox("단어장 조회 방법을 선택하세요.",
