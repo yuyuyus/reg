@@ -1,33 +1,10 @@
 import streamlit as st
+import datetime
 
-def auth():
-    user_id = st.sidebar.text_input('Input Username')
-    user_pw = st.sidebar.text_input('Input Password', type='password')
-    
+option = st.sidebar.selectbox("단어장 조회 방법을 선택하세요.",
+                          ["전체",
+                           "기간",
+                           "날짜"])
 
-    if user_id == 'John1234' and  user_pw == 'password1234': # You can call this auth info from DB or somewhere safe.
-        auth_result = True
-    else:
-        auth_result = False
-
-    return auth_result
-
-
-def create_layout():
-    auth_result = auth()
-
-    if auth_result:
-        st.sidebar.success('Correct Auth Info :)')
-        st.title('Hello World')
-        st.header('Header')
-        st.subheader('Sub Header')
-    else:
-        st.sidebar.warning('Wrong Authentication !!!')
-
-
-def main():
-    create_layout()
-
-
-if __name__ == '__main__':
-    main()
+if option == "날짜":
+    today = st.sidebar.date_input("날짜를 선택하세요.", datetime.datetime.now())
