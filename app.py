@@ -19,7 +19,7 @@ if menu == "단어장 작성하기":
     if write_mean == '예':
        write_mean = st.text_input("뜻 입력하는 곳")
     else: 
-        write_mean = '뜻 미입력'
+       write_mean = '뜻 미입력'
 
     write_example = st.radio("위 단어의 예문을 입력하시겠습니까?", ("아니오", "예"))
     if write_example == '예':
@@ -37,7 +37,7 @@ if menu == "단어장 작성하기":
     if st.button('작성 완료하기'):
         wordlist=[write_date, write_word, write_mean, write_example, write_memo]
         st.write(wordlist)
-        st.write('작성한 내용이 저장되었습니다.')
+        st.success('작성한 내용이 저장되었습니다.')
           
           
           
