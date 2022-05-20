@@ -54,9 +54,9 @@ if menu == "단어장 작성하기":
       st.success('작성한 내용이 저장되었습니다.')
       
     if st.button('작성 완료하기33'):
-      df=wordlist_df.append(wordlist_df2, ignore_index=True)
+      wordlist_df.loc[-1] = wordlist_df2
       
-      st.table(df)
+      st.table(wordlist_df)
 
                     
           
