@@ -38,8 +38,8 @@ if menu == "단어장 작성하기":
       wordlist=list([write_date, write_word, write_mean, write_example, write_memo])
       st.write(wordlist)
       
-      wordlist_df = pd.DataFrame(wordlist)
-      st.DataFrame(wordlist_df)
+      wordlist_df = pd.dataframe(wordlist)
+      st.dataframe(wordlist_df)
       
       st.success('작성한 내용이 저장되었습니다.')
           
