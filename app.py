@@ -39,7 +39,7 @@ if menu == "단어장 작성하기":
       st.write(wordlist)
       
       wordlist_df=pd.DataFrame(wordlist, columns=column_name)
-      st.dataframe(wordlist_df)
+      st.dataframe(wordlist_df, width=200)
       
       st.success('작성한 내용이 저장되었습니다.')
           
