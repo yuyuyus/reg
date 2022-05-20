@@ -7,19 +7,41 @@ menu = st.sidebar.radio("단어장을 작성할지, 조회할지 선택해 주�
                           ("단어장 작성하기",
                            "단어장 조회하기"))
 
+column_name = ['날짜', '단어', '뜻', '예문', '메모']
+data_all = []
+
+
+
 if menu == "단어장 작성하기":
     write_date = st.date_input("작성 날짜", datetime.datetime.now())
-    write_word = st.text_input("Enter Your First Name", "Type Here ...")
-    #write_mean = 
-    
+    write_word = st.text_input("단어 입력하는 곳", "필수 입력")
+    write_mean = st.radio("위 단어의 뜻을 입력하시겠습니까?", ("예", "아니오"))
+      if write_mean == '예':
+          write_mean = st.text_input("뜻 입력하는 곳")
+      else: 
+          write_mean = '뜻 미입력'
+
+    write_example = st.radio("위 단어의 예문을 입력하시겠습니까?", ("예", "아니오"))
+      if write_example == '예':
+          write_example = st.text_input("예문 입력하는 곳")
+      else: 
+          write_example = '예문 미입력'
+          
+    write_memo = st.radio("추가적으로 메모할 내용이 있습니까?", ("예", "아니오"))
+      if write_memo == '예':
+          write_memo = st.text_input("뜻 입력하는 곳")
+      else: 
+          write_mean = '메모 미입력'
 
 
-
-column_name = ['날짜', '단어', '뜻', '예', '메모']
-
-
-
-
+    if st.button('작성 완료하기'):
+        wordlist=[write_date, write_word, write_mean, write_example, write_memo]
+        st.write(wordlist)
+        st.write('작성한 내용이 저장되었습니다.')
+          
+          
+          
+          
 option = st.sidebar.selectbox("단어장 조회 방법을 선택하세요.",
                           ["전체",
                            "기간",
