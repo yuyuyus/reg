@@ -15,7 +15,7 @@ data_all = []
 if menu == "단어장 작성하기":
     write_date = st.date_input("작성 날짜", datetime.datetime.now())
     write_word = st.text_input("단어 입력하는 곳", "필수 입력")
-    write_mean = st.radio("위 단어의 뜻을 입력하시겠습니까?", ("예", "아니오"))
+    write_mean = st.radio("위 단어의 뜻을 입력하시겠습니까?", ["예", "아니오"])
       if write_mean == '예':
           write_mean = st.text_input("뜻 입력하는 곳")
       else: 
