@@ -2,10 +2,8 @@ joblib
 matplotlib
 numpy
 pandas
-plotly
-ply
 ptyprocess
 seaborn
 scikit-learn
 streamlit
-
+math
