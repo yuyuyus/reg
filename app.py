@@ -97,9 +97,8 @@ if option == '삭제':
   else:
     delete = st.multiselect('아래 목록에서 삭제할 단어를 선택하세요.', options=lst)
     if st.button('선택 지우기'):
-      delete=set(delete)
-      lst=set(lst)
-      lst=lst-delete
+      lst=set(lst)-set(delete)
+      lst=list(lst)
       
     if st.button('모두 지우기'):
       del lst[:]
