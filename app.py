@@ -80,22 +80,23 @@ def cache_lst():
 lst = cache_lst()
 input = st.text_input('추가할 단어를 써 주세요.')
 if st.checkbox('모두 지우기'):
-    caching.clear_cache()
-    lst = cache_lst()
+    del 1st[:]
+    #caching.clear_cache()
+    #lst = cache_lst()
 elif input:
     lst.append(input)
 
 if st.checkbox('삭제하기'):
     delete = st.selectbox('삭제할 단어를 선택하세요.', options=lst)
-    if st.button('Delete'):
+    if st.button('삭제 완료하기'):
         lst.remove(delete)
         st.success(f'Delete : {delete}')
 
 if st.checkbox('수정하기'):
     change_from = st.selectbox('수정할 단어를 선택하세요.', options=lst)
     change_index = lst.index(change_from)
-    change_to = st.text_input('수정하여 넣을 내용을 적어주세요.')
-    if st.button('Change'):
+    change_to = st.text_input('아래와 같이 수정합니다.')
+    if st.button('수정 완료하기'):
         lst.remove(change_from)
         lst.insert(change_index, change_to)
         st.success(f'Change {change_from} to {change_to}')
