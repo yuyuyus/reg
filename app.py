@@ -89,7 +89,7 @@ def cache_lst():
     return lst
 
 lst = cache_lst()
-if len(lst) == 0: 
+if len(lst) < 1: 
   input = st.text_input('추가할 단어를 써 주세요.')
   if st.button('입력하기'):
     lst.append(input)
