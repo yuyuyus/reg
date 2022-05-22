@@ -80,7 +80,7 @@ def cache_lst():
 lst = cache_lst()
 input = st.text_input('추가할 단어를 써 주세요.')
 if st.checkbox('모두 지우기'):
-    del 1st[:]
+    del lst[:]
     #caching.clear_cache()
     #lst = cache_lst()
 elif input:
