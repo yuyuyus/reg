@@ -116,7 +116,7 @@ elif option == '입력':
     st.success('입력된 내용이 없습니다.')
   else : 
     if st.button('입력하기'):
-    lst.append(input)
+      lst.append(input)
 
 
   
