@@ -110,8 +110,12 @@ elif option == '수정':
       lst.remove(change_from)
       lst.insert(change_index, change_to)
 elif option == '입력':
+  if len(lst) < 1:
   input = st.text_input('추가할 단어를 써 주세요.')
-  lst.append(input)
+    if input == "":
+      st.success('입력된 내용이 없습니다.')
+    else : 
+      lst.append(input)
 
 
   
