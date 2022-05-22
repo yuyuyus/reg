@@ -40,10 +40,14 @@ if menu == "단어장 작성하기":
 
       wordlist_df1=pd.DataFrame(wordlist1, columns=column_name)
       wordlist_df2=pd.DataFrame(wordlist2, columns=column_name)
+      
       #wordlist_df1.loc[-1] = wordlist_df2
 
       st.table(wordlist_df1)  #st.dataframe(wordlist_df)
       st.table(wordlist_df2)
+      
+      wordlist_df1=wordlist_df1.append(wordlist_df2, ignore_index =True)
+      st.table(wordlist_df1)
       st.success('작성한 내용이 저장되었습니다.')
       
       '''
