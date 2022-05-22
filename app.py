@@ -116,7 +116,6 @@ elif option == '입력':
 
   
     
-if len(lst) > 0:
-  st.table(lst)
-else: 
-  st.success('단어장이 텅 비어있습니다.')
+
+st.table(lst)
+
