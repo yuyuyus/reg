@@ -100,6 +100,7 @@ if option == '삭제':
       for i in delete:
         if i in lst:
           lst.remove(i)
+          return lst
 
       
     if st.button('모두 지우기'):
