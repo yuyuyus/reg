@@ -99,8 +99,7 @@ if option == '삭제':
       st.session_state['word'] = lst
       delete = st.selectbox('아래 목록에서 삭제할 단어를 선택하세요.', options=lst, key=0)
     if st.button('선택 지우기', key=1):
-        st.session_state['word'].remove(delete)
-        #lst.remove(delete)
+        lst.remove(delete)
     if st.button('모두 지우기'):
       del lst[:]
       st.success('단어장이 텅 비었습니다.')
