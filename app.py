@@ -33,16 +33,18 @@ if menu == "단어장 작성하기":
     else: 
        write_memo = '메모 미입력'
 
-    for i in [1,2,3]:  
-      
-      if st.button('작성 완료하기'):
-        wordlist=list([[write_date, write_word, write_mean, write_example, write_memo]])
-        globals()['wordlist_df_{}'.format(i)]=pd.DataFrame(wordlist, columns=column_name)
-        st.table(wordlist_df_i)  #st.dataframe(wordlist_df)
-        st.success('작성한 내용이 저장되었습니다.')
-    
-      
+        
+    if st.button('작성 완료하기'):
+      wordlist1=list([[write_date, write_word, write_mean, write_example, write_memo]])
+      wordlist2=list([[write_date, write_word, write_mean, write_example, write_memo]])
 
+      wordlist_df1=pd.DataFrame(wordlist1, columns=column_name)
+      wordlist_df2=pd.DataFrame(wordlist2, columns=column_name)
+      wordlist_df1.loc[-1] = wordlist_df2
+
+      st.table(wordlist_df1)  #st.dataframe(wordlist_df)
+      
+      st.success('작성한 내용이 저장되었습니다.')
       
       '''
       if st.button('작성 완료하기2'):
