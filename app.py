@@ -92,9 +92,7 @@ lst = cache_lst()
 option = st.radio("옵션 선택하기", ("입력", "삭제", '수정'))
 
 if len(lst) == 0: 
-  if option == '삭제' and option == '수정':
-    st.text('삭제하거나 수정할 단어가 없습니다.')
-    option == '입력'
+  option == '입력'
   
 else:
   
