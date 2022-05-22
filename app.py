@@ -91,16 +91,21 @@ def cache_lst():
 lst = cache_lst()
 option = st.radio("옵션 선택하기", ("입력", "삭제", '수정'))
 if option == '삭제':
-  delete = st.selectbox('아래 목록에서 단어를 선택하면 삭제됩니다.', options=lst)
-  lst.remove(delete)
-  if st.button('모두 지우기'):
-    del lst[:]
-  #caching.clear_cache()
+  if len(lst) < 1:
+    st.success('삭제할 단어가 존재하지 않습니다.')
+  else:
+    delete = st.selectbox('아래 목록에서 단어를 선택하면 삭제됩니다.', options=lst)
+    lst.remove(delete)
+    if st.button('모두 지우기'):
+      del lst[:]
 elif option == '수정':
-  change_from = st.selectbox('수정할 단어를 선택하세요.', options=lst)
-  change_index = lst.index(change_from)
-  change_to = st.text_input('아래와 같이 수정합니다.')
-  if st.button('수정 완료하기'):
+  if len(lst) < 1:
+    st.success('수정할 단어가 존재하지 않습니다.')
+  else:
+    change_from = st.selectbox('수정할 단어를 선택하세요.', options=lst)
+    change_index = lst.index(change_from)
+    change_to = st.text_input('아래와 같이 수정합니다.')
+    if st.button('수정 완료하기'):
       lst.remove(change_from)
       lst.insert(change_index, change_to)
 elif option == '입력':
