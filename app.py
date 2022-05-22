@@ -33,7 +33,7 @@ if menu == "단어장 작성하기":
     else: 
        write_memo = '메모 미입력'
 
-    for i in range():  
+    for i in [1,2,3]:  
       
       if st.button('작성 완료하기'):
         wordlist=list([[write_date, write_word, write_mean, write_example, write_memo]])
