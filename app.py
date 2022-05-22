@@ -11,7 +11,7 @@ column_name = ['날짜', '단어', '뜻', '예문', '메모']
 data_all = []
 
 
-for i in range(100): 
+for i in [1,2,3]: 
   if menu == "단어장 작성하기":
     write_date = st.date_input("작성 날짜", datetime.datetime.now())
     write_word = st.text_input("단어 입력하는 곳", placeholder="필수 입력")
