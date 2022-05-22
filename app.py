@@ -99,7 +99,7 @@ if option == '삭제':
     if st.button('선택 지우기'):
       delete=set(delete)
       lst=set(lst)
-      lst-delete
+      lst=lst-delete
       
     if st.button('모두 지우기'):
       del lst[:]
