@@ -89,13 +89,14 @@ def cache_lst():
     return lst
 
 lst = cache_lst()
-option = st.radio("옵션 선택하기", ("입력", "삭제", '수정'))
-
 if len(lst) == 0: 
-  option == '입력'
-  
+  option0 = st.radio("옵션 선택하기", ("입력"))
+  input = st.text_input('추가할 단어를 써 주세요.')
+  lst.append(input)
+
 else:
-  
+  option = st.radio("옵션 선택하기", ("입력", "삭제", '수정'))
+
   if option == '삭제':
     delete = st.selectbox('삭제할 단어를 선택하세요.', options=lst)
     lst.remove(delete)
