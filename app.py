@@ -75,7 +75,7 @@ if option == "날짜":
     
 from gsheetsdb import connect
 
-url = "https://docs.google.com/spreadsheets/d/1MevjWxh5MIRMn4ehaYTUBanNxmXNv-tv_fz8UXb86l8/edit#gid=0"
+url = "https://docs.google.com/spreadsheets/d/1v79IkkTNPr9FP3Z1gsOFE0V32y_LJcJTVUh_tj0frjc/edit?usp=sharing"
 conn = connect()
 rows = conn.execute(f'SELECT * FROM "{url}"')
 
