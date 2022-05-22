@@ -44,14 +44,13 @@ if menu == "단어장 작성하기":
       st.success('작성한 내용이 저장되었습니다.')
           
         
-    if st.button('작성 완료하기2'):
-      wordlist2=[[write_date, write_word, write_mean, write_example, write_memo]]
-      wordlist_df2=pd.DataFrame(wordlist2, columns=column_name)
-      wordlist_df.loc[-1] = wordlist_df2
-
-      st.table(wordlist_df2)  #st.dataframe(wordlist_df)
+       if st.button('작성 완료하기2'):
+         wordlist2=[[write_date, write_word, write_mean, write_example, write_memo]]
+         wordlist_df2=pd.DataFrame(wordlist2, columns=column_name)
+         wordlist_df.loc[-1] = wordlist_df2
+         st.table(wordlist_df2)  #st.dataframe(wordlist_df)
       
-      st.success('작성한 내용이 저장되었습니다.')
+         st.success('작성한 내용이 저장되었습니다.')
       
 
                     
