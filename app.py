@@ -1,7 +1,7 @@
 import streamlit as st
 import datetime
 import pandas as pd
-
+@st.cache(allow_output_mutation=True)
 st.sidebar.title('Menu')
 menu = st.sidebar.radio("단어장을 작성할지, 조회할지 선택해 주세요.",
                           ("단어장 작성하기",
@@ -11,7 +11,7 @@ column_name = ['날짜', '단어', '뜻', '예문', '메모']
 data_all = []
 
 
-@st.cache(allow_output_mutation=True)
+
 if menu == "단어장 작성하기":
     write_date = st.date_input("작성 날짜", datetime.datetime.now())
     write_word = st.text_input("단어 입력하는 곳", placeholder="필수 입력")
