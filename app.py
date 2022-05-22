@@ -113,7 +113,8 @@ elif option == '수정':
 elif option == '입력':
   input = st.text_input('추가할 단어를 써 주세요.')
   if input == "":
-    st.success('입력된 내용이 없습니다.')
+    st.success('입력할 내용을 적고 입력 버튼을 눌러주세요.')
+    st.button('입력하기')
   else : 
     if st.button('입력하기'):
       lst.append(input)
