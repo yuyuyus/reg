@@ -95,8 +95,9 @@ if option == '삭제':
   if len(lst) < 1:
     st.success('삭제할 단어가 존재하지 않습니다.')
   else:
-    delete = st.selectbox('아래 목록에서 단어를 선택하면 삭제됩니다.', options=lst)
-    lst.remove(delete)
+    delete = st.selectbox('아래 목록에서 삭제할 단어를 선택하세요.', options=lst)
+    if st.button('선택 지우기'):
+      lst.remove(delete)
     if st.button('모두 지우기'):
       del lst[:]
 elif option == '수정':
@@ -114,6 +115,7 @@ elif option == '입력':
   if input == "":
     st.success('입력된 내용이 없습니다.')
   else : 
+    if st.button('입력하기'):
     lst.append(input)
 
 
