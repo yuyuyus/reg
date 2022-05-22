@@ -85,7 +85,7 @@ for output_text in st.session_state["text_list"]:
     
 @st.cache(allow_output_mutation=True)
 def cache_lst():
-    lst = { }
+    lst = {}
     return lst
   
 
@@ -118,7 +118,7 @@ elif option == '입력':
     st.button('입력하기')
   else : 
     if st.button('입력하기'):
-      lst.append(input)
+      lst.add(input)
 
 
   
