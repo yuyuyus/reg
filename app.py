@@ -88,10 +88,6 @@ def cache_lst():
     lst = []
     return lst
   
-def word_input():
-  option == '입력'
-  input = st.text_input('추가할 단어를 써 주세요.')
-  lst.append(input)
 
 lst = cache_lst()
 option = st.radio("옵션 선택하기", ("입력", "삭제", '수정'))
@@ -103,11 +99,9 @@ if option == '삭제':
     lst.remove(delete)
     if st.button('모두 지우기'):
       del lst[:]
-      word_input()
 elif option == '수정':
   if len(lst) < 1:
     st.success('수정할 단어가 존재하지 않습니다.')
-    word_input()
   else:
     change_from = st.selectbox('수정할 단어를 선택하세요.', options=lst)
     change_index = lst.index(change_from)
