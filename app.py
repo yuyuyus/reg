@@ -118,7 +118,7 @@ elif option == '입력':
     st.button('입력하기')
   else : 
     if st.button('입력하기'):
-      lst.add(input)
+      lst.update(input)
 
 
   
