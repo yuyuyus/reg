@@ -95,12 +95,12 @@ if option == '삭제':
   if len(lst) < 1:
     st.success('삭제할 단어가 존재하지 않습니다.')
   else:
-    delete = st.selectbox('아래 목록에서 삭제할 단어를 선택하세요.', options=lst)
-    if st.button('선택 지우기'):
-      lst.remove(delete)
-      st.selectbox('아래 목록에서 삭제할 단어를 선택하세요.', options=lst)
-      if len(lst) < 1:
-        st.success('단어장이 텅 비었습니다.')
+    while len(lst) >= 1:
+      delete = st.selectbox('아래 목록에서 삭제할 단어를 선택하세요.', options=lst)
+      if st.button('선택 지우기'):
+        lst.remove(delete)
+        continue
+    st.success('단어장이 텅 비었습니다.')
     if st.button('모두 지우기'):
       del lst[:]
       st.success('단어장이 텅 비었습니다.')
