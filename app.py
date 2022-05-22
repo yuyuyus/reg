@@ -90,9 +90,9 @@ def cache_lst():
 
 lst = cache_lst()
 if len(lst) == 0: 
-  option0 = st.radio("옵션 선택하기", ("입력"))
   input = st.text_input('추가할 단어를 써 주세요.')
-  lst.append(input)
+    if st.button('입력하기'):
+      lst.append(input)
 
 else:
   option = st.radio("옵션 선택하기", ("입력", "삭제", '수정'))
