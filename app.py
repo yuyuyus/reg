@@ -99,9 +99,7 @@ if option == '삭제':
     if st.button('선택 지우기'):
       for i in delete:
         if i in lst:
-          lst.remove(i)
-          return lst
-
+          st.session_state.lst.remove(i)
       
     if st.button('모두 지우기'):
       del lst[:]
