@@ -98,6 +98,7 @@ if option == '삭제':
     delete = st.multiselect('아래 목록에서 삭제할 단어를 선택하세요.', options=lst)
     if st.button('선택 지우기'):
       lst.extend(delete)
+      lst=set(lst)
     if st.button('모두 지우기'):
       del lst[:]
       st.success('단어장이 텅 비었습니다.')
@@ -119,6 +120,7 @@ elif option == '입력':
   else : 
     if st.button('입력하기'):
       lst.append(input)
+      lst=set(lst)
 
 
   
