@@ -75,7 +75,7 @@ if option == "날짜":
     
 from gsheetsdb import connect
 
-url = st.secrets["https://docs.google.com/spreadsheets/d/1MevjWxh5MIRMn4ehaYTUBanNxmXNv-tv_fz8UXb86l8/edit#gid=0"]
+url = "https://docs.google.com/spreadsheets/d/1MevjWxh5MIRMn4ehaYTUBanNxmXNv-tv_fz8UXb86l8/edit#gid=0"
 conn = connect()
 rows = conn.execute(f'SELECT * FROM "{url}"')
 df_gsheet = pd.DataFrame(rows)
