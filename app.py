@@ -122,9 +122,8 @@ elif option == '입력':
       lst.append(input)
       lst=set(lst)
 
-
   
     
 
-st.table([lst])
+st.table(lst)
 
