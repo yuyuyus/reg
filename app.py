@@ -97,7 +97,7 @@ if len(lst) == 0 and option == '삭제' and option == '수정':
     delete = st.selectbox('삭제할 단어를 선택하세요.', options=lst)
     lst.remove(delete)
     if st.button('모두 지우기'):
-    del lst[:]
+      del lst[:]
     #caching.clear_cache()
     
   elif option == '수정':
