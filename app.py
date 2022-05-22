@@ -93,6 +93,9 @@ option = st.radio("옵션 선택하기", ("입력", "삭제", '수정'))
 
 if len(lst) == 0 and option == '삭제' and option == '수정':
   st.text('삭제하거나 수정할 단어가 없습니다.')
+  
+else:
+  
   if option == '삭제':
     delete = st.selectbox('삭제할 단어를 선택하세요.', options=lst)
     lst.remove(delete)
