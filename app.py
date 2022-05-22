@@ -77,7 +77,9 @@ from gsheetsdb import connect
 
 url = "https://docs.google.com/spreadsheets/d/1MevjWxh5MIRMn4ehaYTUBanNxmXNv-tv_fz8UXb86l8/edit#gid=0"
 conn = connect()
-rows = conn.execute(f'SELECT * FROM "{url}"')
+rows = conn.execute(url)
+#rows = conn.execute(f'SELECT * FROM "{url}"')
+
 df_gsheet = pd.DataFrame(rows)
 st.write(df_gsheet)
 
