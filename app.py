@@ -11,8 +11,7 @@ column_name = ['날짜', '단어', '뜻', '예문', '메모']
 data_all = []
 
 
-
-  if menu == "단어장 작성하기":
+if menu == "단어장 작성하기":
     write_date = st.date_input("작성 날짜", datetime.datetime.now())
     write_word = st.text_input("단어 입력하는 곳", placeholder="필수 입력")
     write_mean = st.radio("위 단어의 뜻을 입력하시겠습니까?", ("아니오", "예"))
@@ -32,6 +31,7 @@ data_all = []
        write_memo = st.text_input("메모 입력하는 곳")
     else: 
        write_memo = '메모 미입력'
+  
 
     for i in [1,2,3]: 
       if st.button('작성 완료하기'):
