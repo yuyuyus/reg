@@ -1,6 +1,7 @@
 import streamlit as st
 import datetime
 import pandas as pd
+'''
 @st.cache(allow_output_mutation=True)
 st.sidebar.title('Menu')
 menu = st.sidebar.radio("단어장을 작성할지, 조회할지 선택해 주세요.",
@@ -48,8 +49,7 @@ if menu == "단어장 작성하기":
       wordlist_df1=wordlist_df1.append(wordlist_df2, ignore_index =True)
       st.table(wordlist_df1)
       st.success('작성한 내용이 저장되었습니다.')
-      
-      
+'''
       
       '''
       if st.button('작성 완료하기2'):
@@ -99,26 +99,29 @@ def cache_lst():
     return lst
 
 lst = cache_lst()
-input = st.text_input('추가할 단어를 써 주세요.')
-if st.checkbox('모두 지우기'):
+option = st.radio("옵션 선택하기", ("입력", "삭제", '수정'))
+
+if len(lst) == 0 and option == '삭제' and option == '수정':
+  st.text('삭제하거나 수정할 단어가 없습니다.')
+  if option == '삭제':
+    delete = st.selectbox('삭제할 단어를 선택하세요.', options=lst)
+    lst.remove(delete)
+    if st.button('모두 지우기'):
     del lst[:]
     #caching.clear_cache()
-    #lst = cache_lst()
-elif input:
-    lst.append(input)
-
-if st.checkbox('삭제하기'):
-    delete = st.selectbox('삭제할 단어를 선택하세요.', options=lst)
-    if st.button('삭제 완료하기'):
-        lst.remove(delete)
-        st.success(f'Delete : {delete}')
-
-if st.checkbox('수정하기'):
+    
+  elif option == '수정':
     change_from = st.selectbox('수정할 단어를 선택하세요.', options=lst)
     change_index = lst.index(change_from)
     change_to = st.text_input('아래와 같이 수정합니다.')
     if st.button('수정 완료하기'):
         lst.remove(change_from)
         lst.insert(change_index, change_to)
-        st.success(f'Change {change_from} to {change_to}')
+    
+   
+  elif option == '입력':
+    input = st.text_input('추가할 단어를 써 주세요.')
+    lst.append(input)
+    
+
 st.table(lst)
