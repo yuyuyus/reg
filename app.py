@@ -119,5 +119,4 @@ elif option == '입력':
 if len(lst) > 0:
   st.table(lst)
 else: 
-  option = st.radio("옵션 선택하기", ("입력", "삭제", '수정'))
   st.success('단어장이 텅 비어있습니다.')
