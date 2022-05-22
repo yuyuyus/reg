@@ -11,7 +11,7 @@ column_name = ['날짜', '단어', '뜻', '예문', '메모']
 data_all = []
 
 
-
+@st.cache(allow_output_mutation=True)
 if menu == "단어장 작성하기":
     write_date = st.date_input("작성 날짜", datetime.datetime.now())
     write_word = st.text_input("단어 입력하는 곳", placeholder="필수 입력")
@@ -72,7 +72,7 @@ option = st.sidebar.selectbox("단어장 조회 방법을 선택하세요.",
 if option == "날짜":
     today = st.sidebar.date_input("날짜를 선택하세요.", datetime.datetime.now())
 
-    
+'''    
 text = st.text_input("表示したい単語を入力してください")
 
 if 'text_list' not in st.session_state:
@@ -90,7 +90,7 @@ with col2:
       
 for output_text in st.session_state["text_list"]:
   st.write("", output_text)    
-    
+'''
     
     
 @st.cache(allow_output_mutation=True)
