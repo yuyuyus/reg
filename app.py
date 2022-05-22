@@ -11,7 +11,7 @@ column_name = ['날짜', '단어', '뜻', '예문', '메모']
 data_all = []
 
 
-for i in list(range()): 
+for i in range(100): 
   if menu == "단어장 작성하기":
     write_date = st.date_input("작성 날짜", datetime.datetime.now())
     write_word = st.text_input("단어 입력하는 곳", placeholder="필수 입력")
@@ -35,18 +35,12 @@ for i in list(range()):
 
         
     if st.button('작성 완료하기'):
-      wordlist1=list([[write_date, write_word, write_mean, write_example, write_memo]])
-      wordlist2=list([[write_date, write_word, write_mean, write_example, write_memo]])
+      wordlist=list([[write_date, write_word, write_mean, write_example, write_memo]])
 
-      wordlist_df1=pd.DataFrame(wordlist1, columns=column_name)
-      wordlist_df2=pd.DataFrame(wordlist2, columns=column_name)
-      
-
-      st.table(wordlist_df1)  #st.dataframe(wordlist_df)
-      st.table(wordlist_df2)
-      
-      wordlist_df1=wordlist_df1.append(wordlist_df2, ignore_index =True)
-      st.table(wordlist_df1)
+      globals()['wordlist_df_{}'.format(i)]=pd.DataFrame(wordlist, columns=column_name)
+      st.table(wordlist_df_i)
+    
+      #wordlist_df_i=wordlist_df1.append(wordlist_df2, ignore_index =True)
       st.success('작성한 내용이 저장되었습니다.')
       
       
