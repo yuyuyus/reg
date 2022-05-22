@@ -11,8 +11,8 @@ column_name = ['날짜', '단어', '뜻', '예문', '메모']
 data_all = []
 
 
-
-if menu == "단어장 작성하기":
+for i in range(): 
+  if menu == "단어장 작성하기":
     write_date = st.date_input("작성 날짜", datetime.datetime.now())
     write_word = st.text_input("단어 입력하는 곳", placeholder="필수 입력")
     write_mean = st.radio("위 단어의 뜻을 입력하시겠습니까?", ("아니오", "예"))
@@ -48,6 +48,8 @@ if menu == "단어장 작성하기":
       wordlist_df1=wordlist_df1.append(wordlist_df2, ignore_index =True)
       st.table(wordlist_df1)
       st.success('작성한 내용이 저장되었습니다.')
+      
+      
       
       '''
       if st.button('작성 완료하기2'):
