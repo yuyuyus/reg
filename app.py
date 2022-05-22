@@ -46,7 +46,8 @@ if menu == "단어장 작성하기":
       st.table(wordlist_df1)  #st.dataframe(wordlist_df)
       st.table(wordlist_df2)
       
-      wordlist_df1=wordlist_df1.append(wordlist_df2, ignore_index =True)
+      #wordlist_df1=wordlist_df1.append(wordlist_df2, ignore_index =True)
+      wordlist_df.loc[-1] = wordlist_df2
       st.table(wordlist_df1)
       st.success('작성한 내용이 저장되었습니다.')
       
