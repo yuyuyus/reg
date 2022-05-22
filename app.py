@@ -72,35 +72,31 @@ option = st.sidebar.selectbox("단어장 조회 방법을 선택하세요.",
 if option == "날짜":
     today = st.sidebar.date_input("날짜를 선택하세요.", datetime.datetime.now())
     
-    
-from gsheetsdb import connect
+@st.cache(allow_output_mutation=True)
+def cache_lst():
+    lst = []
+    return lst
 
-url = "https://docs.google.com/spreadsheets/d/1v79IkkTNPr9FP3Z1gsOFE0V32y_LJcJTVUh_tj0frjc/edit?usp=sharing"
-conn = connect()
-rows = conn.execute(f'SELECT * FROM "{url}"')
+lst = cache_lst()
+input = st.text_input('何か入力して下さい')
+if st.checkbox('clear'):
+    caching.clear_cache()
+    lst = cache_lst()
+elif input:
+    lst.append(input)
 
-df_gsheet = pd.DataFrame(rows)
-st.write(df_gsheet)
+if st.checkbox('delete'):
+    delete = st.selectbox('削除する要素を選択して下さい', options=lst)
+    if st.button('Delete'):
+        lst.remove(delete)
+        st.success(f'Delete : {delete}')
 
-'''
-# Create a connection object.
-conn = connect()
-
-# Perform SQL query on the Google Sheet.
-# Uses st.cache to only rerun when the query changes or after 10 min.
-@st.cache(ttl=600)
-def run_query(query):
-    rows = conn.execute(query, headers=1)
-    rows = rows.fetchall()
-    return rows
-
-sheet_url = st.secrets["https://docs.google.com/spreadsheets/d/1MevjWxh5MIRMn4ehaYTUBanNxmXNv-tv_fz8UXb86l8/edit#gid=0"]
-rows = run_query(f'SELECT * FROM "{sheet_url}"')
-
-# Print results.
-for row in rows:
-    st.write(f"{row.name} has a :{row.pet}:")
-'''
-    
-    
-    
+if st.checkbox('change'):
+    change_from = st.selectbox('変更する要素を選択して下さい', options=lst)
+    change_index = lst.index(change_from)
+    change_to = st.text_input('何に変更しますか')
+    if st.button('Change'):
+        lst.remove(change_from)
+        lst.insert(change_index, change_to)
+        st.success(f'Change {change_from} to {change_to}')
+st.table(lst)
