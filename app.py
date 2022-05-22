@@ -95,9 +95,7 @@ if option == '삭제':
   if len(lst) < 1:
     st.success('삭제할 단어가 존재하지 않습니다.')
   else:
-    if 'word' not in st.session_state:
-      st.session_state['word'] = lst
-    delete = st.selectbox('아래 목록에서 삭제할 단어를 선택하세요.', options=lst)
+    delete = st.multiselect('아래 목록에서 삭제할 단어를 선택하세요.', options=lst)
     if st.button('선택 지우기'):
       lst.remove(delete)
     if st.button('모두 지우기'):
