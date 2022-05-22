@@ -71,6 +71,34 @@ option = st.sidebar.selectbox("단어장 조회 방법을 선택하세요.",
 
 if option == "날짜":
     today = st.sidebar.date_input("날짜를 선택하세요.", datetime.datetime.now())
+    
+    
+from gsheetsdb import connect
+
+url = st.secrets["https://docs.google.com/spreadsheets/d/1MevjWxh5MIRMn4ehaYTUBanNxmXNv-tv_fz8UXb86l8/edit#gid=0"]
+conn = connect()
+rows = conn.execute(f'SELECT * FROM "{url}"')
+df_gsheet = pd.DataFrame(rows)
+st.write(df_gsheet)
+
+'''
+# Create a connection object.
+conn = connect()
+
+# Perform SQL query on the Google Sheet.
+# Uses st.cache to only rerun when the query changes or after 10 min.
+@st.cache(ttl=600)
+def run_query(query):
+    rows = conn.execute(query, headers=1)
+    rows = rows.fetchall()
+    return rows
+
+sheet_url = st.secrets["https://docs.google.com/spreadsheets/d/1MevjWxh5MIRMn4ehaYTUBanNxmXNv-tv_fz8UXb86l8/edit#gid=0"]
+rows = run_query(f'SELECT * FROM "{sheet_url}"')
+
+# Print results.
+for row in rows:
+    st.write(f"{row.name} has a :{row.pet}:")
 
     
     
