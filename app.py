@@ -9,10 +9,7 @@ st.title('나의 단어장 작성하기')
 def cache_lst():
     lst = []
     return lst
-'''
-if 'lst' not in st.session_state:
-  st.session_state.lst = []
-'''
+
   
 lst = cache_lst()
 option = st.radio("옵션 선택하기", ("입력", "삭제", '수정'))
