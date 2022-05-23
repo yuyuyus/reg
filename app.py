@@ -83,14 +83,14 @@ for output_text in st.session_state["text_list"]:
 '''
     
 @st.cache(allow_output_mutation=True)
-if 'lst' not in st.session_state:
-  st.session_state.lst = []
-  
+
 def cache_lst():
     lst = []
     return lst
 
-
+if 'lst' not in st.session_state:
+  st.session_state.lst = []
+  
 #lst = cache_lst()
 option = st.radio("옵션 선택하기", ("입력", "삭제", '수정'))
 
