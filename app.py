@@ -83,7 +83,6 @@ for output_text in st.session_state["text_list"]:
 '''
     
     
-@st.cache(allow_output_mutation=True)
 def cache_lst():
     lst = []
     return lst
@@ -99,7 +98,7 @@ if option == '삭제':
     if st.button('선택 지우기'):
       for i in delete:
         if i in lst:
-          st.session_state.lst.remove(i)
+          lst.remove(i)
       
     if st.button('모두 지우기'):
       del lst[:]
