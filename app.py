@@ -82,7 +82,7 @@ for output_text in st.session_state["text_list"]:
   st.write("", output_text)    
 '''
     
-@st.cache(allow_output_mutation=True)
+#@st.cache(allow_output_mutation=True)
 
 def cache_lst():
     lst = []
