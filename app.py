@@ -49,7 +49,7 @@ elif option == '입력':
     if st.button('입력하기'):
       lst.append(input)
       
-
+st.header('나의 단어장 ')
 st.table(lst)
 
 
