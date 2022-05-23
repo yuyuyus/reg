@@ -50,7 +50,7 @@ elif option == '입력':
       lst.append(input)
       
 st.subheader('나의 단어장 목록')
-st.table(lst)
+st.dataframe(lst)
 
 
 '''
