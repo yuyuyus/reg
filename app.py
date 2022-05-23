@@ -88,7 +88,7 @@ def cache_lst():
     lst = []
     return lst
 
-if 'lst'not in st.session_state:
+if 'lst' not in st.session_state:
   st.ssession_state.lst = []
 
 
