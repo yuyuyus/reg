@@ -82,16 +82,17 @@ for output_text in st.session_state["text_list"]:
   st.write("", output_text)    
 '''
     
-#@st.cache(allow_output_mutation=True)
+@st.cache(allow_output_mutation=True)
 
 def cache_lst():
     lst = []
     return lst
-
+'''
 if 'lst' not in st.session_state:
   st.session_state.lst = []
+'''
   
-#lst = cache_lst()
+lst = cache_lst()
 option = st.radio("옵션 선택하기", ("입력", "삭제", '수정'))
 
 if option == '삭제':
@@ -102,7 +103,7 @@ if option == '삭제':
     if st.button('선택 지우기'):
       for i in delete:
         if i in lst:
-          st.session_state.lst.remove(i)
+          lst.remove(i)
           
       
     if st.button('모두 지우기'):
@@ -117,8 +118,8 @@ elif option == '수정':
     change_index = lst.index(change_from)
     change_to = st.text_input('아래와 같이 수정합니다.')
     if st.button('수정 완료하기'):
-      st.session_state.lst.remove(change_from)
-      st.session_state.lst.insert(change_index, change_to)
+      lst.remove(change_from)
+      lst.insert(change_index, change_to)
       
 elif option == '입력':
   input = st.text_input('추가할 단어를 써 주세요.')
@@ -127,7 +128,7 @@ elif option == '입력':
     st.button('입력하기')
   else : 
     if st.button('입력하기'):
-      st.session_state.lst.append(input)
+      lst.append(input)
       
 
   
