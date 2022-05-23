@@ -29,7 +29,7 @@ if option == '삭제':
       del lst[:]
       st.success('단어장이 텅 비었습니다.')
       
-elif option == '수정':
+if option == '수정':
   if len(lst) < 1:
     st.success('수정할 단어가 존재하지 않습니다.')
   else:
@@ -40,7 +40,7 @@ elif option == '수정':
       lst.remove(change_from)
       lst.insert(change_index, change_to)
       
-elif option == '입력':
+if option == '입력':
   input = st.text_input('추가할 단어를 써 주세요.')
   if input == "":
     st.success('입력할 내용을 적고 입력 버튼을 눌러주세요.')
