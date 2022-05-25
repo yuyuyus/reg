@@ -2,7 +2,7 @@ import streamlit as st
 import datetime
 import pandas as pd
 
-st.title('나의 단어장 작성하기')
+st.title('단어장 작성하기')
 
 @st.cache(allow_output_mutation=True)
 
@@ -49,6 +49,6 @@ if option == '입력':
     if st.button('입력하기'):
       lst.append(input)
       
-st.subheader('나의 단어장 목록')
+st.subheader('기록된 단어 목록')
 st.table(lst)
 
