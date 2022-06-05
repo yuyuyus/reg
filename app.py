@@ -50,5 +50,5 @@ if option == '입력':
       lst.append(input)
       
 st.subheader('기록된 단어 목록')
-st.dataframe(lst)
+st.table(lst)
 
