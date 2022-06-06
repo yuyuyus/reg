@@ -9,7 +9,7 @@ d = st.date_input(
      datetime.date(2019, 7, 6))
 st.write('Your birthday is:', d)
 
-st.write(datetime.datetime.now())
+st.write(datetime.datetime.now().strftime('%Y-%m-%d'))
 
 
 @st.cache(allow_output_mutation=True)
