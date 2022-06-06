@@ -14,6 +14,13 @@ t = st.select_slider(
      '기간 선택',
      options=['10년 전부터', '9년 전부터','8년 전부터','7년 전부터','6년 전부터','5년 전부터','4년 전부터','3년 전부터','2년 전부터','1년 전부터'])
 
+days = int(''.join(list(filter(str.isdigit, t))))
+st.text(days)
+
+
+
+
+
 st.write(datetime.datetime.now().strftime('%Y-%m-%d'))
 
 
