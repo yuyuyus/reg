@@ -4,6 +4,14 @@ import pandas as pd
 
 st.title('내가 찾은 단어 담벼락')
 
+d = st.date_input(
+     "When's your birthday",
+     datetime.date(2019, 7, 6))
+st.write('Your birthday is:', d)
+
+st.write(datetime.datetime.now())
+
+
 @st.cache(allow_output_mutation=True)
 
 def cache_lst():
