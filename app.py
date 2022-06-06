@@ -1,7 +1,7 @@
 import streamlit as st
 import datetime
 import pandas as pd
-
+from dateutil.relativedelta import relativedelta
 st.title('내가 찾은 단어 담벼락')
 
 d = st.date_input(
@@ -16,10 +16,6 @@ t = st.select_slider(
 
 days = int(''.join(list(filter(str.isdigit, t))))
 st.text(days)
-
-
-
-
 
 st.write(datetime.datetime.now().strftime('%Y-%m-%d'))
 
